@@ -1,0 +1,252 @@
+/* roboto-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/roboto-v32-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//assets/fonts/roboto-v32-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-slate-grey);
+    background-color: var(--white);
+}
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+
+}
+
+picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+label,
+input {
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    font-size: 16px !important;
+}
+
+h1 {
+    font-size: 2.3rem;
+    font-size: clamp(2.3rem, 2.0142857142857142rem + 1.4285714285714286vw, 3.3rem);
+}
+
+.fw-700 {
+    font-weight: 700 !important;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: 700;
+    width: 100%;
+    color: var(--white);
+    background-color: var(--dark-slate-grey);
+    padding: 1.25em 1em;
+    border: none;
+    border-radius: .5em;
+    transition: all .2s ease;
+}
+
+.btn:active {
+    background-image: linear-gradient(to right, hsl(338.5, 100%, 62.2%) 5%, hsl(4, 100%, 67%) 100%);
+    box-shadow: 0 0 20px 1px rgb(255, 62, 131, .5), 0 0 20px 1px rgb(255, 98, 87, .5);
+}
+
+/* --------------- Sign-up form -------------- */
+.container,
+.msg-container {
+    background-color: var(--white);
+}
+
+.text-content {
+    padding: 2em 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1.5em;
+}
+
+.list {
+    display: grid;
+    gap: 1em;
+    padding-block: .5em 1em;
+}
+
+.list li {
+    position: relative;
+    margin-left: 2em;
+}
+
+.list li::before {
+    content: url(assets/images/icon-list.svg);
+    position: absolute;
+    left: -32px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    gap: .5em;
+}
+
+form label {
+    font-size: 12px;
+}
+
+#email {
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid var(--grey);
+    border-radius: .5em;
+}
+
+#email:active {
+    border-color: var(--dark-slate-grey);
+}
+
+
+input.error-state {
+    background-color: #ffe6e6;
+    color: var(--tomato);
+    border: 1px solid var(--tomato) !important;
+    outline-color: var(--tomato);
+}
+
+.error {
+    color: var(--tomato);
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    display: none;
+}
+
+/* ----------------- Success message ----------------- */
+.msg-container {
+    margin-top: 25%;
+    padding: 1.5em;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2em;
+}
+
+.success {
+    justify-content: start;
+    align-items: start;
+}
+
+.msg-container .btn {
+    margin-top: 100%;
+}
+
+
+/* ---------------- Attribution ----------------- */
+.attribution {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--grey);
+}
+
+.attribution a {
+    color: var(--tomato);
+}
+
+/* ------------------- Media Qeuerys ------------------- */
+@media (min-width: 768px) {
+    body {
+        background-color: var(--charcoal-grey);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 900px;
+        margin: 100px auto;
+        padding: 1.5em;
+        border-radius: 2em;
+        background-color: var(--white);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .text-content {
+        padding: 2em;
+    }
+
+    .hero-img {
+        order: 2;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .msg-container {
+        justify-content: center;
+        align-items: start;
+        width: 500px;
+        height: auto;
+        margin-top: 0;
+        margin: 100px auto;
+        padding: 4em;
+        border-radius: 2em;
+    }
+
+    .msg-container .btn {
+        margin-top: 1em;
+    }
+}
