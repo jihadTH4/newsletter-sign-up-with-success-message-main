@@ -73,6 +73,7 @@ p {
 }
 
 h1 {
+    /* Change the font size here */
     font-size: 2.2rem;
     font-size: clamp(2.2rem, 2.0142857142857142rem + 1.4285714285714286vw, 3.2rem);
 }
